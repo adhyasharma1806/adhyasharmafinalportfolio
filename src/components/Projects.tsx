@@ -18,7 +18,8 @@ const Projects = () => {
       ],
       status: 'Featured Project',
       github: '#',
-      demo: '#',
+      <a href="https://learnora-eight.vercel.app/#">Demo</a>
+
       image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop'
     }
   ];
