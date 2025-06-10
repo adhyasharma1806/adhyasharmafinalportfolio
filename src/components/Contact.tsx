@@ -20,7 +20,7 @@ const Contact = () => {
     e.preventDefault();
     
     // Create mailto link
-    const mailtoLink = `mailto:adhyasharma1800@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:adhyasharma1806@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )}`;
     
