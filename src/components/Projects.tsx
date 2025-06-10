@@ -18,7 +18,7 @@ const Projects = () => {
       ],
       status: 'Featured Project',
       github: '#',
-      Demo:'https://learnora-eight.vercel.app/##',
+      demo:'https://learnora-eight.vercel.app/##',
       
 
       image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop'
