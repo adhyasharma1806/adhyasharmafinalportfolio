@@ -13,9 +13,11 @@ app.use(cors({
     'http://localhost:5173',
     'https://adhyasharmafinalportfolio.vercel.app'
   ],
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type']
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
 }));
+
+app.options('*', cors());
 app.use(express.json());
 
 const requiredEnvKeys = ['EMAIL_HOST', 'EMAIL_PORT', 'EMAIL_USER', 'EMAIL_PASS', 'EMAIL_TO'];
