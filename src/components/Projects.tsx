@@ -2,50 +2,76 @@
 import { ExternalLink, Github, Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import llmImage from '@/assets/llm.png';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'Learnova - AI-Powered Personalized Learning Platform',
-      description: 'A comprehensive full-stack AI-driven learning platform that delivers personalized tech and coding content tailored to individual users. Features behavioral data analysis, AI insights for adaptive learning, and course logic integration.',
-      technologies: ['Next.js', 'Django', 'PostgreSQL', 'OpenAI'],
-      features: [
-        'AI-driven personalized learning recommendations',
-        'Behavioral data analysis for adaptive content',
-        'Dynamic lesson planning and course progression',
-        'User progress tracking and analytics',
-        'Responsive design for all devices'
-      ],
-      status: 'Featured Project',
-      github: '#',
-      demo:'https://learnora-eight.vercel.app/##',
       
-
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop'
-    }
+  title: 'LLM-Powered Company Reputation Dashboard',
+  description: 'An AI-driven dashboard that analyzes company reputation using Large Language Models across multiple data sources, providing real-time insights into brand sentiment and public perception.',
+  
+  technologies: [
+  'Next.js',
+  'TypeScript',
+  'React',
+  'Tailwind CSS',
+  'Flask',
+  'Supabase',
+  'OpenAI API'
+],
+  
+  features: [
+    'LLM-based sentiment analysis across multi-source data',
+    'Real-time tracking of brand perception and trends',
+    'Interactive dashboards for data visualization',
+    'Scalable backend for data aggregation and processing',
+    'API integration for dynamic data fetching'
+  ],
+  
+  status: 'Featured Project',
+  
+  github: 'https://github.com/adhyasharma1806/LLM-powered-company-reputation-dashboard-', 
+  demo: 'https://llm-powered-company-reputation-dash.vercel.app/sign-in',
+  
+  image: llmImage
+}
   ];
 
   const additionalProjects = [
     {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React and featuring dark theme, smooth animations, and excellent UX.',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      github: '#',
-      demo: '#'
+  title: 'GPU Allocation System for Academic Institutions',
+  
+  description: 'Developed a role-based GPU allocation platform with automated request handling, approval workflows, scheduling, and real-time usage tracking, improving resource utilization in academic environments.',
+  
+  technologies: ['Next.js', 'Node.js', 'MongoDB', 'Express.js'],
+  
+  github: 'https://github.com/adhyasharma1806/gpuallocation',
+  demo: 'https://pbl4-six.vercel.app'
     },
+   
     {
-      title: 'Data Structures Visualizer',
-      description: 'Interactive web application for visualizing common data structures and algorithms to aid in learning.',
-      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Canvas API'],
-      github: '#',
-      demo: '#'
-    },
+  title: 'VoyageAI – AI Travel Planner',
+  
+  description: 'A visually rich AI-powered travel planner web application with modern UI/UX, dynamic destination exploration, and interactive booking interface designed for seamless user experience.',
+  
+  technologies: [
+    'Next.js',
+    'TypeScript',
+    'Tailwind CSS',
+    'Framer Motion',
+    'Mapbox'
+  ],
+  
+  github: 'https://github.com/adhyasharma1806/VoyageAI',
+  demo: 'https://voyage-ai-steel.vercel.app/' 
+},
     {
-      title: 'Task Management App',
-      description: 'A full-stack task management application with user authentication and real-time updates.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      github: '#',
-      demo: '#'
+      title: 'Airboard: Hand Gesure- Controlled Keyboard',
+      description: 'Real-time hand detection using CVZone and OpenCV, enabling gesture-based keyboard control with customizable key mappings and responsive performance.',
+      technologies: ['Python', 'OpenCV', 'CVZone', 'MediaPipe'],
+      github: 'https://github.com/adhyasharma1806/AirBoard',
+      demo: 'https://youtu.be/E5VNPF8y308'
     }
   ];
 
@@ -79,9 +105,13 @@ const Projects = () => {
                   {/* Project Image */}
                   <div className="relative overflow-hidden bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-8 lg:p-12 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-6 text-white">
-                        <Star size={48} />
-                      </div>
+                      <div className="h-full w-full overflow-hidden">
+  <img 
+    src={project.image} 
+    alt={project.title}
+    className="w-full h-full object-cover"
+  />
+</div>
                       <span className="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium">
                         {project.status}
                       </span>

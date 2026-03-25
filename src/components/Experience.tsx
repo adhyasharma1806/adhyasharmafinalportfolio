@@ -5,6 +5,31 @@ import { Card, CardContent } from '@/components/ui/card';
 const Experience = () => {
   const experiences = [
     {
+      title: 'Software Developer Intern',
+      company: ' Software Development Centre (MUJ)',
+      location: 'Jaipur, India',
+      duration: 'Aug 2025– Present',
+      type:  'Internship',
+      description: [
+        ' Contributed to full-stack development of internal systems in collaboration with cross-functional teams.',
+        ' Designed, developed, and optimized scalable application features to improve system performance.',
+        ' Worked across both frontend and backend to ensure seamless functionality and integration.',
+        
+      ],
+      technologies: [
+  'JavaScript',
+  'TypeScript',
+  'React.js',
+  'Node.js',
+  'Express.js',
+  'MongoDB',
+  'REST APIs',
+  'Git',
+  'GitHub',
+  'VS Code'
+],
+    },
+    {
       title: 'Software Engineering Virtual Internship',
       company: 'JPMorgan Chase & Co.',
       location: 'Virtual Internship',
@@ -32,20 +57,7 @@ const Experience = () => {
       ],
       technologies: ['Product Design', 'UX/UI', 'Design Thinking', 'User Research'],
     },
-    {
-      title: 'UX Design Advanced Job Simulation',
-      company: 'Lloyds Banking Group',
-      location: 'Virtual Internship',
-      duration: 'June 2025',
-      type: 'Virtual Internship',
-      description: [
-        'Completed advanced UX design simulation focused on banking and financial services',
-        'Applied user experience principles to real-world financial products',
-        'Developed wireframes and prototypes for digital banking solutions',
-        'Learned about accessibility and inclusive design in financial applications',
-      ],
-      technologies: ['UX Design', 'Wireframing', 'Prototyping', 'Figma', 'User Testing'],
-    },
+    
   ];
 
   return (

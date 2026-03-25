@@ -13,13 +13,13 @@ const About = () => {
     {
       icon: MapPin,
       title: 'Location',
-      description: 'NCR, India',
+      description: 'Manipal University Jaipur, India',
       detail: '+91 9797892021',
     },
     {
       icon: Star,
       title: 'Focus Areas',
-      description: 'Full-Stack Development & Data Structures',
+      description: 'Full-Stack Development, Artificial Intelligence, Machine Learning, LLMs , Data Visualization  ',
       detail: 'Always learning new technologies',
     },
   ];
@@ -56,7 +56,7 @@ const About = () => {
                 
                 <p className="text-lg">
                   With a strong foundation in multiple programming languages and frameworks, I specialize 
-                  in full-stack web development, data structures, and algorithms. I believe in writing 
+                  in Full-stack web development, Data Structures and Algorithms,Artificial Intelligence, LLMs and Data Visualization. I believe in writing 
                   clean, efficient code and creating user-centered applications that solve real-world problems.
                 </p>
                 

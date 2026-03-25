@@ -16,23 +16,44 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create mailto link
-    const mailtoLink = `mailto:adhyasharma1806@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: "Message Ready!",
-      description: "Your email client should open with the message pre-filled.",
-    });
+  const [isSending, setIsSending] = useState(false);
 
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    try {
+      const response = await fetch('http://localhost:3001/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const details = data?.details ? ` (${data.details})` : '';
+        throw new Error((data?.error || 'Failed to send message') + details);
+      }
+
+      toast({
+        title: 'Message sent!',
+        description: 'Your message was delivered successfully. I will respond as soon as I can.',
+      });
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error: any) {
+      console.error('Send email error', error);
+      toast({
+        title: 'Send failed',
+        description: `Could not send your message: ${error.message || error}`,
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -67,19 +88,19 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/adhyasharma5810334',
+      href: 'https://www.linkedin.com/in/adhya-sharma-584984284/',
       color: 'hover:text-blue-400'
     },
     {
       icon: ExternalLink,
-      label: 'Portfolio',
-      href: 'https://adhyasharmaportfolio1.tiny.site',
+      label: 'Instagram',
+      href: 'https://www.instagram.com/adhyas.mp3?igsh=MWJoOGdrcmYzMWFqdA%3D%3D&utm_source=qr',
       color: 'hover:text-green-400'
     },
     {
       icon: Github,
       label: 'GitHub',
-      href: '#',
+      href: 'https://github.com/adhyasharma1806',
       color: 'hover:text-gray-400'
     }
   ];
@@ -179,10 +200,11 @@ const Contact = () => {
                     
                     <Button 
                       type="submit"
+                      disabled={isSending}
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 hover-glow"
                     >
                       <Send size={18} className="mr-2" />
-                      Send Message
+                      {isSending ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
                 </CardContent>
