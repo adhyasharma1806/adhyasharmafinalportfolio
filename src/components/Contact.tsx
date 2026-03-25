@@ -6,7 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+const API_URL = import.meta.env.VITE_API_URL;
 
+console.log("API_URL:", API_URL);
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
