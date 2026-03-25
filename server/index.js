@@ -10,10 +10,11 @@ const app = express();
 app.use(helmet());
 app.use(cors({
   origin: [
-    'http://localhost:5173', // local dev
-    'https://adhyasharmafinalportfolio.vercel.app/' // 🔥 replace with your real Vercel URL
+    'http://localhost:5173',
+    'https://adhyasharmafinalportfolio.vercel.app'
   ],
   methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
 }));
 app.use(express.json());
 
