@@ -25,13 +25,13 @@ const Contact = () => {
     setIsSending(true);
 
     try {
-      const response = await fetch('http://localhost:3001/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  const response = await fetch(`${API_URL}/api/send-email`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
 
       const data = await response.json();
 
