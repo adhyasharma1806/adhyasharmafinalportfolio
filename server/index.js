@@ -70,27 +70,19 @@ app.get('/api/health', (_, res) => {
   res.json({ status: 'ok' });
 });
 
-const PORT = Number(process.env.BACKEND_PORT) || 3001;
 
-transporter.verify().then(() => {
-  const server = app.listen(PORT, () => {
-    console.log(`Backend email server running on http://localhost:${PORT}`);
-  });
+const PORT = process.env.PORT || 3001;
 
-  server.on('error', (err) => {
-    const code = err && (err).code ? (err).code : null;
-
-    if (code === 'EADDRINUSE') {
-      console.error(`Backend port ${PORT} already in use. Use BACKEND_PORT=xxxx or stop the other process.`);
-    } else {
-      console.error('Backend failed to start:', err);
-    }
-    process.exit(1);
-  });
-}).catch((err) => {
-  console.error('Email transporter verify failed:', err);
-  console.error('Check your SMTP settings in .env (EMAIL_HOST, EMAIL_PORT, EMAIL_USER, EMAIL_PASS).');
-  process.exit(1);
+// Start server FIRST
+const server = app.listen(PORT, () => {
+  console.log(`Backend email server running on http://localhost:${PORT}`);
 });
 
-
+// Then verify email separately
+transporter.verify()
+  .then(() => {
+    console.log('SMTP connection verified ✅');
+  })
+  .catch((err) => {
+    console.error('SMTP verification failed ⚠️:', err.message);
+  });
