@@ -8,7 +8,13 @@ dotenv.config();
 
 const app = express();
 app.use(helmet());
-app.use(cors({ origin: true }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173', // local dev
+    'https://adhyasharmafinalportfolio.vercel.app/' // 🔥 replace with your real Vercel URL
+  ],
+  methods: ['GET', 'POST'],
+}));
 app.use(express.json());
 
 const requiredEnvKeys = ['EMAIL_HOST', 'EMAIL_PORT', 'EMAIL_USER', 'EMAIL_PASS', 'EMAIL_TO'];
@@ -34,6 +40,7 @@ const transporter = nodemailer.createTransport({
     user: EMAIL_USER,
     pass: EMAIL_PASS,
   },
+  connectionTimeout: 10000,
 });
 
 app.post('/api/send-email', async (req, res) => {
