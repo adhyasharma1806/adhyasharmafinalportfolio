@@ -115,7 +115,7 @@ const Intro = ({ onComplete }: { onComplete: () => void }) => {
               color: 'hsl(36 20% 70%)',
             }}
           >
-            Portfolio — 2024
+            - Portfolio —
           </div>
         </div>
       </div>
