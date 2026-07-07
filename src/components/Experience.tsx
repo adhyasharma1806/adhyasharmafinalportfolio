@@ -7,6 +7,19 @@ const Experience = () => {
 
   const experiences = [
     {
+      title: 'Tech Intern',
+      company: 'Eduxa AI',
+      location: 'New Delhi, India',
+      duration: 'May 2026 – June 2026',
+      type: 'Internship',
+      description: [
+        'Developed and delivered multiple production-ready web pages and contributed to core website modules for the company and its brands, strengthening user experience and business presence.',
+        'Rapidly adapted to the Frappe Framework, implementing backend functionality and building a functional mini-project within a short learning curve, demonstrating strong technical agility.',
+        'Gained hands-on exposure to the company’s backend architecture, data handling workflows, and system design practices.',
+      ],
+      technologies: ['JavaScript', 'TypeScript', 'Next.js', 'Node.js',  'Frappe Framework', 'REST APIs', 'Git'],
+    },
+    {
       title: 'Software Developer Intern',
       company: 'Software Development Centre (MUJ)',
       location: 'Jaipur, India',
