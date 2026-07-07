@@ -7,6 +7,19 @@ const Experience = () => {
 
   const experiences = [
     {
+      title: 'Software Developer',
+      company: 'HATCH',
+      location: 'Gurugram, India',
+      duration: 'June 2026 – Present',
+      type: 'Internship',
+      description: [
+        'Contributing as a Software Developer Intern to enterprise-scale applications, collaborating with cross-functional teams to design, develop, and improve software components aligned with business requirements.',
+        'Displayed professionalism and ownership in a corporate environment, meeting deliverables on time while aligning with organizational processes, security guidelines, and quality standards.',
+        'Followed industry-standard engineering practices, including clean code, version control, documentation, and structured problem-solving, ensuring quality and maintainability of deliverables.',
+      ],
+        technologies: ['ASP.NET', 'OOPS IN c#', 'Angular', 'SQL',  '.NET', 'REST APIs', 'Git'],
+    },
+    {
       title: 'Tech Intern',
       company: 'Eduxa AI',
       location: 'New Delhi, India',
@@ -23,7 +36,7 @@ const Experience = () => {
       title: 'Software Developer Intern',
       company: 'Software Development Centre (MUJ)',
       location: 'Jaipur, India',
-      duration: 'Aug 2025 – Present',
+      duration: 'Aug 2025 – May 2026',
       type: 'Internship',
       description: [
         'Contributed to full-stack development of internal systems in collaboration with cross-functional teams.',
